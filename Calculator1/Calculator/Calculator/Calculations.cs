@@ -39,11 +39,11 @@ namespace WpfApp1
 
             for (int i = 0; i < count; i++)
             {
-                if (i < count - 1) //zabezpieczenie przed wyjsciem poza zakres ilosci operatorow
+                if (i < count - 1)
                 {
                     if (count % 3 == 0 && i == 0)
                     {
-                        //operatory o nizszej wadze jako pierwsze w dzialaniu
+                        
                         if (lOperators[i] == '+' || lOperators[i] == '-')
                         {
                             if (lOperators[i + 1] == '*' || lOperators[i + 1] == '/')
@@ -52,7 +52,7 @@ namespace WpfApp1
                                 output = ValueOfComponentOperation(lOperators[i], lNumbers[i], tempD);
 
                             }
-                        } //operatory o wyzszej wadze jako pierwsze w dzialaniu
+                        } 
                         else if (lOperators[i] == '*' || lOperators[i] == '/')
                         {
                             output += ValueOfComponentOperation(lOperators[i], lNumbers[i], lNumbers[i + 1]);
@@ -94,7 +94,7 @@ namespace WpfApp1
                     tempS = string.Empty;
                 }
 
-                if (i == tLength - 1) //ostatnia cyfra
+                if (i == tLength - 1)
                 {
                     list.Add(Convert.ToDouble(tempS));
                     tempS = string.Empty;
@@ -164,8 +164,8 @@ namespace WpfApp1
 
         public double CalculationOfOperation()
         {
-            List<char> operatorsFromInput = new List<char>(); //lista z wszystkimi operatorami
-            List<double> numbersFromInput = new List<double>(); //lista z wszystkimi liczbami
+            List<char> operatorsFromInput = new List<char>(); 
+            List<double> numbersFromInput = new List<double>(); 
             List<double> countedDoubles = new List<double>();
 
             FindOperators(ref operatorsFromInput, Text);
